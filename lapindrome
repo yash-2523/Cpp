@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+typedef long long ll;
+typedef unsigned long long int ull;
+#define mp make_pair
+#define pb push_back
+#define MOD 1000000007
+#define f(i,n) for(ll i=0;i<(ll)n;i++)
+#define fs(i,a,b) for(int i=a;i<b;i++)
+#define fr(i,a,b) for(int i=a;i>=b;i--)
+#define c(a) cin >> a
+#define all(a) a.begin(),a.end()
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define de cerr
+#ifdef LOCAL
+#define cerr cout
+#endif
+using namespace std;
+int main(){
+   fast;
+   int t;
+   cin>>t;
+   while(t--){
+        int mid;
+        string c1;
+        int a1[26] = {0};
+        int a2[26] = {0};
+   
+        cin>>c1;
+        int n=c1.size();
+        mid = n/2;
+        for(int i=0;i<mid;i++){
+                a1[c1[i]-'a']++;
+        } 
+        if(n%2){
+            mid++;
+        }
+        for(int i=mid;i<n;i++){
+                a2[c1[i]-'a']++;
+        }
+
+        bool ok=true;
+
+        for(int i=0;i<26;i++){
+            if(a1[i]!=a2[i]){
+                ok=false;
+                break;
+            }
+        }
+
+        if(ok){
+            cout<<"YES\n";
+            continue;
+        }
+        cout<<"NO\n";
+
+   }
+    
+   
+     
+ 
+ 
+   return 0;
+}
